@@ -38,6 +38,18 @@ public class DecoratorsTest {
         
 
 
+
+        Item rose3 = new Rose(FlowerColor.BLUE, 10.0, 10.0);
+
+        ItemDecorator decorator3 = new ItemDecoratorDefault(rose3);
+        decorator3 = new RibbonDecorator(decorator3, rose3);
+        decorator3 = new BasketDecorator(decorator3, rose3);
+
+
+        Assertions.assertEquals(decorator3.getDescription(), "  Wrapped in ribbon Wrapped in backet ");
+        
+
+
         
 
         // ItemDecorator flower2 = new Flower(); 
@@ -73,6 +85,24 @@ public class DecoratorsTest {
 
         Assertions.assertEquals(decorator.getPrice(), 54.0);
         
+
+
+        Item rose1 = new Rose(FlowerColor.BLUE, 10.0, 10.0);
+
+        ItemDecorator decorator1 = new ItemDecoratorDefault(rose1);
+        decorator1 = new BasketDecorator(decorator1, rose1);
+        decorator1 = new BasketDecorator(decorator1, rose1);
+
+
+        Assertions.assertEquals(decorator1.getPrice(), 18.0);
+
+        Item rose3 = new Rose(FlowerColor.BLUE, 10.0, 10.0);
+
+        ItemDecorator decorator3 = new ItemDecoratorDefault(rose3);
+
+
+
+        Assertions.assertEquals(decorator3.getPrice(), 10.0);
     }
        
 }
