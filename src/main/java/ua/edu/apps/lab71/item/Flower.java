@@ -17,6 +17,7 @@ public class Flower extends Item {
     private FlowerColor color = FlowerColor.BLUE;
     private double price = 123;
     private FlowerType flowerType = FlowerType.ROSE;
+    private String packagingInfo = "flower";
 
     public Flower(int id) {
         this.id = id;
@@ -39,5 +40,9 @@ public class Flower extends Item {
     }
     public String getColor() {
         return color.toString();
+    }
+
+    public String getDescription() {
+        return packagingInfo;
     }
 }

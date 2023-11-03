@@ -7,7 +7,7 @@ import ua.edu.apps.lab71.store.Item;
 
 public class FlowerBucket extends Item {
     private List<FlowerPack> bucket;
-
+    private String packagingInfo;
     public FlowerBucket(List<FlowerPack> bucket) {
         this.bucket = bucket;
     }
@@ -22,5 +22,9 @@ public class FlowerBucket extends Item {
             overalPrice += f.getPrice();
         }
         return overalPrice;
+    }
+
+    public String getDescription() {
+        return packagingInfo;
     }
 }

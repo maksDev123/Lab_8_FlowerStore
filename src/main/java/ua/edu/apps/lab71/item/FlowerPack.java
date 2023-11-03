@@ -7,6 +7,7 @@ import ua.edu.apps.lab71.store.Item;
 @Getter
 @Setter
 public class FlowerPack extends Item {
+    private String packingInfo;
     private Flower flower;
     private int quantity;
 
@@ -17,5 +18,9 @@ public class FlowerPack extends Item {
 
     public double getPrice() {
         return this.flower.getPrice() * this.quantity;
+    }
+
+    public String getDescription() {
+        return packingInfo;
     }
 }
